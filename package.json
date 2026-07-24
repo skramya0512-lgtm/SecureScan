@@ -6,12 +6,15 @@
   "scripts": {
     "start": "node server.js"
   },
+
   "keywords": [
-    "securescan",
-    "nodejs",
-    "express",
-    "mongodb"
-  ],
+  "securescan",
+  "nodejs",
+  "express",
+  "mysql",
+  "cybersecurity",
+  "security-scanner"
+],
   "dependencies": {
     "axios": "^1.18.1",
     "bcryptjs": "^3.0.3",
@@ -20,11 +23,9 @@
     "express": "^5.1.0",
     "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.3",
-    "mongodb": "^7.5.0",
     "morgan": "^1.10.1",
     "multer": "^2.2.0",
     "mysql2": "^3.23.0",
-    "react-router-dom": "^7.18.1",
     "sequelize": "^6.37.8"
   },
   "devDependencies": {
