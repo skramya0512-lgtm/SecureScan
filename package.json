@@ -13,6 +13,7 @@
     "mongodb"
   ],
   "dependencies": {
+    "axios": "^1.18.1",
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
@@ -23,6 +24,7 @@
     "morgan": "^1.10.1",
     "multer": "^2.2.0",
     "mysql2": "^3.23.0",
+    "react-router-dom": "^7.18.1",
     "sequelize": "^6.37.8"
   },
   "devDependencies": {

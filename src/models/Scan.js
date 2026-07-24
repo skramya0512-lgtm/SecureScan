@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const { sequelize } = require("../config/db");
+console.log("CHECK SEQUELIZE:", typeof sequelize);
 
 const Scan = sequelize.define(
   "Scan",
@@ -11,18 +12,45 @@ const Scan = sequelize.define(
     },
 
     filename: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
     },
 
     filepath: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(500),
       allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
     },
 
     status: {
-      type: DataTypes.ENUM("Safe", "Malicious", "Suspicious"),
+      type: DataTypes.ENUM(
+        "Safe",
+        "Suspicious",
+        "Malicious"
+      ),
       defaultValue: "Safe",
+    },
+
+    score: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0,
+    },
+
+    responseTime: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+
+    https: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: false,
     },
 
     userId: {

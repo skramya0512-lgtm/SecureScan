@@ -12,11 +12,26 @@ const storage = multer.diskStorage({
   },
 });
 
-// Upload middleware
 const upload = multer({
   storage: storage,
+
   limits: {
     fileSize: 5 * 1024 * 1024,
+  },
+
+  fileFilter: function (req, file, cb) {
+
+    const allowedTypes = [
+      "text/plain",
+      "application/pdf"
+    ];
+
+    if (allowedTypes.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error("File type not allowed"), false);
+    }
+
   },
 });
 
